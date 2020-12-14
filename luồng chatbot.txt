@@ -1,0 +1,37 @@
+- login để lấy token
+- Asyntask chạy ngầm từ username,pass,wscode ấy ra IP,Token, TokenOptions
+- Update IP,Token, TokenOptions
+- Khi người dùng
+		+ Nhấn vào icon bot và kéo => bot di chuyển tới vị trí tương ứng
+		+ Nhấn vào icon bot và thả ra tại vị trí đó => gọi hàm ShowChatLayout 
+			* Hiển thị các thành phần cần thiết
+			* Khởi tạo MessagesFragment với tham số truyền vào là Url + Token
+			* Hiển thị menu data list
+			* Kiểm tra token
+			* Mở kết nối
+			* Chờ kết nối
+		+Gửi tin
+			* Kiểm tra loại dữ liệu 
+				^ Payload
+				^ Url
+				^ Phone
+				^ Text
+			* Gửi dữ liệu với tp chính : type,service,data,token qua ws
+			
+			
+-Thư viện
+	+import com.viettel.bss.viettelpos.v4.commons.CommonActivity;
+	+import com.viettel.bss.viettelpos.v4.commons.OnPostExecuteListener;
+	+import com.viettel.bss.viettelpos.v4.dialog.LoginDialog;
+	+import com.viettel.bss.viettelpos.v4.video.FragmentPlayvideo;
+	+import static com.viettel.bccs.model.MenuCustomerCreator.CHANGE_PRODUCT_BCCS_V2;
+	+import static com.viettel.bss.viettelpos.v4.commons.Constant.MENU_FUNCTIONS.CHANGE_PREPARE_FARE;
+	+import com.viettel.bccs.connectionservice.fixedconnection.newone.NewOneFixedConnectionActivity;
+	+import com.viettel.bss.viettelpos.v4.changePrepaidCharge.view.ChangePrepaidChargeActivity;
+	+import com.viettel.bss.viettelpos.v4.connecttionMobile.activity.ActivityCreateNewRequestMobileNew;
+	+import com.viettel.bss.viettelpos.v4.sale.asytask.AsyncTaskCommon;
+	+import com.viettel.bss.viettelpos.v4.work.object.ParseOuput;
+	+com.viettel.bccs.objects.Define
+	+AsyncTaskCommon
+	+BCCSGateway
+	+Websocket
